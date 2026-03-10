@@ -49,12 +49,12 @@ const scrollToSection = (sectionId) => {
 
         <div class="hidden md:flex items-center gap-5">
           <RouterLink
-            to="/auth"
+            to="/login"
             class="text-slate-600 hover:text-blue-600 font-medium transition-colors"
             >Log In</RouterLink
           >
           <RouterLink
-            to="/auth"
+            to="/signup"
             class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
           >
             Join the Study
@@ -119,14 +119,14 @@ const scrollToSection = (sectionId) => {
 
       <div class="flex flex-col gap-4 mt-2">
         <RouterLink
-          to="/auth"
+          to="/login"
           @click="toggleMobileMenu"
           class="text-center font-bold text-slate-700 py-3.5 rounded-xl border-2 border-slate-200 hover:bg-slate-50 transition-colors"
         >
           Log In
         </RouterLink>
         <RouterLink
-          to="/auth"
+          to="/signup"
           @click="toggleMobileMenu"
           class="text-center font-bold text-white bg-blue-600 py-3.5 rounded-xl shadow-lg hover:bg-blue-700 transition-colors"
         >
