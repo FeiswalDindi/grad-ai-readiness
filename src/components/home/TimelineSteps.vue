@@ -16,7 +16,7 @@ const steps = [
 </script>
 
 <template>
-  <section class="py-24 bg-white border-t border-slate-100">
+  <section id="modules" class="py-24 bg-white border-t border-slate-100">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 fade-in-up">
         <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">

@@ -22,7 +22,7 @@
       <button
         class="bg-white text-blue-700 hover:bg-slate-50 font-bold px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-lg border border-transparent hover:border-blue-100"
       >
-        Join the Study
+        <RouterLink to="/auth" class="flex items-center gap-3"> Join the Study </RouterLink>
       </button>
     </div>
   </section>

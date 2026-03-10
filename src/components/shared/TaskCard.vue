@@ -1,12 +1,24 @@
 <script setup>
 import { CheckCircle2, Circle, Lock, ArrowRight } from 'lucide-vue-next'
+import { useRouter } from 'vue-router'
 
-defineProps({
+const router = useRouter()
+
+const props = defineProps({
   title: { type: String, required: true },
   status: { type: String, default: 'locked' }, // 'completed', 'current', 'locked'
   duration: { type: String, required: true },
   index: { type: Number, required: true },
+  link: { type: String, default: '' }, // We added this!
 })
+
+// Function to handle the button click
+const handleAction = () => {
+  // Only navigate if the card isn't locked and a link exists
+  if (props.status !== 'locked' && props.link) {
+    router.push(props.link)
+  }
+}
 </script>
 
 <template>
@@ -41,6 +53,7 @@ defineProps({
     <p class="text-sm text-slate-500 mb-6">{{ duration }}</p>
 
     <button
+      @click="handleAction"
       :disabled="status === 'locked'"
       class="w-full py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all"
       :class="

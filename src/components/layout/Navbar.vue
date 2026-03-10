@@ -9,9 +9,8 @@ const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
 }
 
-// Pro-grade smooth scroll function
 const scrollToSection = (sectionId) => {
-  isMobileMenuOpen.value = false // Close menu if open
+  isMobileMenuOpen.value = false
   const element = document.getElementById(sectionId)
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' })

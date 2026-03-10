@@ -2,12 +2,13 @@
 import StudentLayout from '@/components/layout/StudentLayout.vue'
 import TaskCard from '@/components/shared/TaskCard.vue'
 
+// We added the 'link' property to the first two tasks!
 const tasks = [
-  { title: 'Baseline Survey', duration: '10 mins', status: 'completed' },
-  { title: 'AI Training Module', duration: '60 mins', status: 'current' },
-  { title: 'Endline Survey', duration: '10 mins', status: 'locked' },
-  { title: '6-Month Follow-up', duration: '5 mins', status: 'locked' },
-  { title: '12-Month Follow-up', duration: '5 mins', status: 'locked' },
+  { title: 'Baseline Survey', duration: '10 mins', status: 'completed', link: '/survey' },
+  { title: 'AI Training Module', duration: '60 mins', status: 'current', link: '/module' },
+  { title: 'Endline Survey', duration: '10 mins', status: 'locked', link: '' },
+  { title: '6-Month Follow-up', duration: '5 mins', status: 'locked', link: '' },
+  { title: '12-Month Follow-up', duration: '5 mins', status: 'locked', link: '' },
 ]
 </script>
 
@@ -42,6 +43,7 @@ const tasks = [
           :title="task.title"
           :duration="task.duration"
           :status="task.status"
+          :link="task.link"
         />
       </div>
     </div>

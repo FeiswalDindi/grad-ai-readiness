@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-vue-next'
 </script>
 
 <template>
-  <section class="relative py-24 overflow-hidden fade-in-up">
+  <section id="faq" class="relative py-24 overflow-hidden fade-in-up">
     <div class="absolute inset-0 bg-gradient-to-br from-blue-800 via-blue-700 to-teal-700"></div>
 
     <div
