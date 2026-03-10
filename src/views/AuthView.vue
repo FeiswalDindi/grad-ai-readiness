@@ -1,10 +1,25 @@
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import PublicLayout from '@/components/layout/PublicLayout.vue'
-import { Mail, Lock, User, ArrowRight } from 'lucide-vue-next'
+import { Mail, Lock, User, ArrowRight, Loader2 } from 'lucide-vue-next'
 
+const router = useRouter()
 const isLogin = ref(true)
+const isLoading = ref(false)
+
 const toggleAuth = () => (isLogin.value = !isLogin.value)
+
+// Simulated Login Function
+const handleSubmit = () => {
+  isLoading.value = true
+
+  // Simulate a 1-second network request to the backend
+  setTimeout(() => {
+    isLoading.value = false
+    router.push('/dashboard')
+  }, 1000)
+}
 </script>
 
 <template>
@@ -28,7 +43,7 @@ const toggleAuth = () => (isLogin.value = !isLogin.value)
               </p>
             </div>
 
-            <form @submit.prevent class="space-y-5">
+            <form @submit.prevent="handleSubmit" class="space-y-5">
               <div v-if="!isLogin" class="space-y-2">
                 <label class="text-sm font-semibold text-slate-700 ml-1">Full Name</label>
                 <div class="relative group">
@@ -37,6 +52,7 @@ const toggleAuth = () => (isLogin.value = !isLogin.value)
                   />
                   <input
                     type="text"
+                    required
                     placeholder="John Doe"
                     class="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:ring-4 focus:ring-blue-100 focus:border-blue-600 outline-none transition-all"
                   />
@@ -51,6 +67,7 @@ const toggleAuth = () => (isLogin.value = !isLogin.value)
                   />
                   <input
                     type="email"
+                    required
                     placeholder="name@university.edu"
                     class="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:ring-4 focus:ring-blue-100 focus:border-blue-600 outline-none transition-all"
                   />
@@ -65,6 +82,7 @@ const toggleAuth = () => (isLogin.value = !isLogin.value)
                   />
                   <input
                     type="password"
+                    required
                     placeholder="••••••••"
                     class="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:ring-4 focus:ring-blue-100 focus:border-blue-600 outline-none transition-all"
                   />
@@ -72,10 +90,15 @@ const toggleAuth = () => (isLogin.value = !isLogin.value)
               </div>
 
               <button
-                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-blue-200 flex items-center justify-center gap-2 group transition-all active:scale-[0.98]"
+                type="submit"
+                :disabled="isLoading"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-blue-200 flex items-center justify-center gap-2 group transition-all active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {{ isLogin ? 'Sign In' : 'Create Account' }}
-                <ArrowRight class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <Loader2 v-if="isLoading" class="w-5 h-5 animate-spin" />
+                <template v-else>
+                  {{ isLogin ? 'Sign In' : 'Create Account' }}
+                  <ArrowRight class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </template>
               </button>
             </form>
 
@@ -85,6 +108,7 @@ const toggleAuth = () => (isLogin.value = !isLogin.value)
               }}</span>
               <button
                 @click="toggleAuth"
+                type="button"
                 class="ml-2 font-bold text-blue-600 hover:text-blue-700 transition-colors"
               >
                 {{ isLogin ? 'Register Now' : 'Log In' }}

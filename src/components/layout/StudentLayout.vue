@@ -1,5 +1,15 @@
 <script setup>
 import { GraduationCap, LogOut, LayoutDashboard, User, Bell } from 'lucide-vue-next'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+// Simulated Logout Function
+const handleLogout = () => {
+  // In a real app, we would clear the user's security token here.
+  // For now, we just send them back to the home page!
+  router.push('/')
+}
 </script>
 
 <template>
@@ -34,6 +44,7 @@ import { GraduationCap, LogOut, LayoutDashboard, User, Bell } from 'lucide-vue-n
               <Bell class="w-5 h-5" />
             </button>
             <button
+              @click="handleLogout"
               class="flex items-center gap-2 text-sm font-semibold text-red-500 hover:bg-red-50 px-3 py-2 rounded-lg transition-all"
             >
               <LogOut class="w-4 h-4" />
@@ -53,7 +64,7 @@ import { GraduationCap, LogOut, LayoutDashboard, User, Bell } from 'lucide-vue-n
       </div>
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-6">
+    <footer class="bg-white border-t border-slate-200 py-6 mt-auto relative z-10">
       <div class="max-w-7xl mx-auto px-4 text-center text-sm text-slate-400">
         <p>
           Connected to Research Node: <span class="text-blue-500 font-mono">v1.0.4-stable</span>
