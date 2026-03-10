@@ -71,7 +71,7 @@ const handleTutorDemo = () => {
               JD
             </div>
             <div>
-              <p class="text-white font-bold text-sm">Jane Doe</p>
+              <p class="text-white font-bold text-sm">Stephen</p>
               <p class="text-slate-500 text-xs">Computer Science Cohort '26</p>
             </div>
           </div>

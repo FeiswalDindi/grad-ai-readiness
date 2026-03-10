@@ -18,3 +18,28 @@ html {
     transform: translateY(0);
   }
 }
+
+/* Base hidden state: shifted down and transparent */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); /* Professional "smooth" ease */
+  will-change: transform, opacity;
+}
+
+/* Revealed state: back to original position and visible */
+.reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Optional: Staggering delays for grids */
+.delay-100 {
+  transition-delay: 100ms;
+}
+.delay-200 {
+  transition-delay: 200ms;
+}
+.delay-300 {
+  transition-delay: 300ms;
+}

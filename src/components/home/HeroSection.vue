@@ -1,29 +1,71 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+import { GraduationCap, ArrowRight, PlayCircle } from 'lucide-vue-next'
+</script>
+
 <template>
-  <section
-    class="relative bg-gradient-to-r from-blue-700 via-blue-600 to-teal-500 text-white overflow-hidden fade-in-up"
-  >
+  <section class="relative bg-[#F0F7FF] overflow-hidden">
     <div
-      class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-30"
+      class="absolute top-0 right-0 w-1/2 h-full bg-white skew-x-12 translate-x-32 hidden lg:block"
     ></div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
-      <h1
-        class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 drop-shadow-md"
-      >
-        AI Career Readiness Program <br class="hidden md:block mt-2" />
-        <span class="text-blue-100">for Graduating Students</span>
-      </h1>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative z-10">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div class="flex-1 text-center lg:text-left fade-in-up">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-bold text-xs uppercase tracking-widest mb-6"
+          >
+            <GraduationCap class="w-4 h-4" />
+            Empowering Digital Education
+          </div>
 
-      <p class="mt-4 max-w-2xl mx-auto text-xl md:text-2xl text-blue-50 mb-10 font-light">
-        Join a pioneering research study that equips you with AI skills for the modern job market.
-        Complete short training modules, share your experience, and get compensated.
-      </p>
+          <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-[1.1] mb-6">
+            Master AI Readiness <span class="text-blue-600">Anytime Anywhere</span>
+          </h1>
 
-      <button
-        class="bg-white text-blue-700 hover:bg-slate-50 font-bold px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-lg border border-transparent hover:border-blue-100"
-      >
-        <RouterLink to="/auth" class="flex items-center gap-3"> Join the Study </RouterLink>
-      </button>
+          <p
+            class="text-lg text-slate-600 mb-10 max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed"
+          >
+            Join this research study to assess and accelerate your career readiness with
+            industrial-grade AI training modules.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+            <RouterLink
+              to="/signup"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-blue-200 transition-all flex items-center gap-2 group"
+            >
+              Start Free Trial
+              <ArrowRight class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </RouterLink>
+
+            <button
+              class="flex items-center gap-2 text-slate-700 font-bold hover:text-blue-600 transition-colors px-6 py-4"
+            >
+              <PlayCircle class="w-6 h-6 text-blue-600" />
+              Watch Demo
+            </button>
+          </div>
+        </div>
+
+        <div class="flex-1 relative fade-in-up" style="animation-delay: 0.2s">
+          <div
+            class="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800"
+              alt="Academic Tutor"
+              class="w-full h-auto object-cover"
+            />
+          </div>
+          <div
+            class="absolute -top-10 -right-10 w-40 h-40 bg-blue-200/50 rounded-full blur-3xl"
+          ></div>
+          <div
+            class="absolute -bottom-10 -left-10 w-64 h-64 bg-indigo-100 rounded-full blur-3xl"
+          ></div>
+        </div>
+      </div>
     </div>
   </section>
 </template>

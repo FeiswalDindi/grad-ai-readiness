@@ -1,33 +1,35 @@
 <script setup>
+import { RouterLink } from 'vue-router'
 import { ArrowRight } from 'lucide-vue-next'
 </script>
 
 <template>
-  <section id="faq" class="relative py-24 overflow-hidden fade-in-up">
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-800 via-blue-700 to-teal-700"></div>
-
+  <section class="py-20 px-4">
     <div
-      class="absolute -top-24 -right-24 w-96 h-96 bg-teal-400 rounded-full mix-blend-overlay filter blur-[100px] opacity-40 animate-pulse"
-    ></div>
-    <div
-      class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-400 rounded-full mix-blend-overlay filter blur-[100px] opacity-40 animate-pulse"
-      style="animation-duration: 4s"
-    ></div>
+      class="max-w-6xl mx-auto rounded-[3rem] bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900 p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-blue-900/20"
+    >
+      <div
+        class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
+      ></div>
 
-    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight mb-6 drop-shadow-md">
-        Ready to Get Started?
-      </h2>
-      <p class="text-base md:text-lg text-blue-100 mb-10 max-w-2xl mx-auto font-light">
-        Join thousands of students preparing for AI-driven careers.
-      </p>
+      <div class="relative z-10 fade-in-up">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight">
+          Ready to Get Started?
+        </h2>
 
-      <button
-        class="group inline-flex items-center gap-3 bg-[#38b2ac] hover:bg-[#319795] text-white px-8 py-4 rounded-full font-bold text-base transition-all duration-300 shadow-lg hover:shadow-[#38b2ac]/50 hover:-translate-y-1 border border-transparent hover:border-teal-200"
-      >
-        Join the Study
-        <ArrowRight class="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
-      </button>
+        <p class="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-medium opacity-90">
+          Join thousands of students preparing for AI-driven careers. Start your baseline assessment
+          today.
+        </p>
+
+        <RouterLink
+          to="/signup"
+          class="inline-flex items-center gap-3 bg-[#4FD1C5] hover:bg-[#45bfb4] text-white px-10 py-5 rounded-full font-black text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 active:scale-95 group"
+        >
+          Join the Study
+          <ArrowRight class="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+        </RouterLink>
+      </div>
     </div>
   </section>
 </template>
